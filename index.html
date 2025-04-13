@@ -5,36 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPTs MIT-MIOTI Management and Leadership Executive Program</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .login-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(59, 130, 246, 0.9);
+      z-index: 1000;
+    }
+    
+    .content {
+      display: none;
+    }
+    
+    .fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+    
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; visibility: hidden; }
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800 p-10">
-
-  <!-- Logo MIOTI -->
-  <div class="flex justify-center mb-8">
-    <img src="MIOTI.png" alt="Logo MIOTI" class="h-16">
+  <!-- Pantalla de Login -->
+  <div id="loginScreen" class="login-container">
+    <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full">
+      <div class="flex justify-center mb-6">
+        <img src="MIOTI.png" alt="Logo MIOTI" class="h-16">
+      </div>
+      <h2 class="text-2xl font-bold mb-6 text-center">Acceso al Programa</h2>
+      <p class="mb-6 text-gray-600 text-center">Ingrese la contraseña para acceder a los recursos del programa MIT-MIOTI.</p>
+      
+      <div class="mb-4">
+        <label for="password" class="block text-gray-700 mb-2">Contraseña</label>
+        <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <button id="loginButton" class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+        Acceder
+      </button>
+      
+      <div id="errorMessage" class="mt-4 text-red-600 text-center hidden">
+        Contraseña incorrecta. Inténtelo de nuevo.
+      </div>
+    </div>
   </div>
 
-  <h1 class="text-4xl font-bold mb-10 text-center">GPTs MIT-MIOTI Management and Leadership Executive Program</h1>
-
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- GPT 1 -->
-    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-      <h2 class="text-xl font-semibold mb-2">Tutor de Macroeconomía</h2>
-      <p class="text-sm text-gray-600 mb-4">GPT especializado en la sesión de Roberto Rigobón (MIT-MIOTI). Ayuda con resúmenes, Q&A y tests.</p>
-      <a href="#" onclick="window.open('https://chatgpt.com/g/g-67ed07c946848191b02138498fb8069d-macroeconomics-roberto-rigobon-session-mit-mioti', '_blank'); return false;" class="text-blue-600 font-medium hover:underline">Ir al GPT</a>
+  <!-- Contenido Principal (oculto inicialmente) -->
+  <div id="mainContent" class="content">
+    <!-- Logo MIOTI -->
+    <div class="flex justify-center mb-8">
+      <img src="MIOTI.png" alt="Logo MIOTI" class="h-16">
     </div>
 
-    <!-- GPT 2 -->
-    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-      <h2 class="text-xl font-semibold mb-2">Le Petit Chef - Caso MIT-MIOTI</h2>
-      <p class="text-sm text-gray-600 mb-4">GPT diseñado para analizar el caso de Le Petit Chef en sesiones del programa Executive MIT-MIOTI. Ideal para explorar ideas, problemas y soluciones estratégicas.</p>
-      <a href="#" onclick="window.open('https://chatgpt.com/g/g-67e7bafe070c8191adc2c63a5f8d7da6-le-petit-chef-case-mioti-mit', '_blank'); return false;" class="text-blue-600 font-medium hover:underline">Ir al GPT</a>
+    <h1 class="text-4xl font-bold mb-10 text-center">GPTs MIT-MIOTI Management and Leadership Executive Program</h1>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- GPT 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Tutor de Macroeconomía</h2>
+        <p class="text-sm text-gray-600 mb-4">GPT especializado en la sesión de Roberto Rigobón (MIT-MIOTI). Ayuda con resúmenes, Q&A y tests.</p>
+        <a href="#" onclick="window.open('https://chatgpt.com/g/g-67ed07c946848191b02138498fb8069d-macroeconomics-roberto-rigobon-session-mit-mioti', '_blank'); return false;" class="text-blue-600 font-medium hover:underline">Ir al GPT</a>
+      </div>
+
+      <!-- GPT 2 -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Le Petit Chef - Caso MIT-MIOTI</h2>
+        <p class="text-sm text-gray-600 mb-4">GPT diseñado para analizar el caso de Le Petit Chef en sesiones del programa Executive MIT-MIOTI. Ideal para explorar ideas, problemas y soluciones estratégicas.</p>
+        <a href="#" onclick="window.open('https://chatgpt.com/g/g-67e7bafe070c8191adc2c63a5f8d7da6-le-petit-chef-case-mioti-mit', '_blank'); return false;" class="text-blue-600 font-medium hover:underline">Ir al GPT</a>
+      </div>
+
     </div>
 
+    <footer class="mt-16 text-center text-sm text-gray-500">
+      © 2025 Carlos Picazo | Desarrollado con ❤️ por MIOTI
+    </footer>
   </div>
 
-  <footer class="mt-16 text-center text-sm text-gray-500">
-    © 2025 Carlos Picazo | Desarrollado con ❤️ por MIOTI
-  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const correctPassword = 'mioti';
+      const loginButton = document.getElementById('loginButton');
+      const loginScreen = document.getElementById('loginScreen');
+      const mainContent = document.getElementById('mainContent');
+      const passwordInput = document.getElementById('password');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // También permitir iniciar sesión presionando Enter
+      passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          checkPassword();
+        }
+      });
+      
+      loginButton.addEventListener('click', checkPassword);
+      
+      function checkPassword() {
+        if (passwordInput.value === correctPassword) {
+          // Contraseña correcta, mostrar contenido
+          loginScreen.classList.add('fade-out');
+          mainContent.style.display = 'block';
+          
+          // Guardar en localStorage para mantener la sesión
+          localStorage.setItem('miotiLoggedIn', 'true');
+        } else {
+          // Contraseña incorrecta, mostrar error
+          errorMessage.classList.remove('hidden');
+          passwordInput.value = '';
+          passwordInput.focus();
+        }
+      }
+      
+      // Comprobar si ya ha iniciado sesión antes
+      if (localStorage.getItem('miotiLoggedIn') === 'true') {
+        loginScreen.classList.add('fade-out');
+        mainContent.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
